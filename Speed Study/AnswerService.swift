@@ -1,5 +1,5 @@
 //
-//  Score.swift
+//  AnswerService.swift
 //  Speed Study
 //
 //  Created by Johnny Chiu on 7/10/17.
@@ -7,11 +7,3 @@
 //
 
 import Foundation
-
-class Score{
-    var score: Int
-    
-    init(_ score: Int){
-        self.score = score
-    }
-}
