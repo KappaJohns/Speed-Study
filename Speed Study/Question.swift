@@ -11,11 +11,11 @@ import Foundation
 class Question{
     
     
-    static var questionSet: [Int: String] = [1: "what is the derivative of X^2?", 2: " What is the integration of 2x^3 + 4x^(1/2)?", 3: ""  ]
+    static var questionSet: [Int: String] = [1: "What is the derivative of X^2?",
+                                             2: "What is the integration of 2x^3 + 4x^(1/2)?",
+                                             3: ""  ]
     var questionNum: Int
     var question: String
-    var right: Bool = true
-    
     
     init(number: Int, name: String)
     {

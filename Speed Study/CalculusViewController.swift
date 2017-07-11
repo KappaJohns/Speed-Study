@@ -10,7 +10,7 @@ import Foundation
 
 class CalculusViewController: UIViewController{
     
-    
+    var questionHelp = QuestionHelper.self
     @IBOutlet weak var button2: UIButton!
     
     @IBAction func button1Tapped(_ sender: Any) {
@@ -29,6 +29,7 @@ class CalculusViewController: UIViewController{
     var seconds = Date().timeIntervalSinceReferenceDate
     override func viewDidLoad() {
         super.viewDidLoad()
+        questionNumber.text = "Question Number: \(questionHelp.getQuestionNum())"
     }
     
 }
