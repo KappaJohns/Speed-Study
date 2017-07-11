@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+class QuestionService{
+    
+    static func nextQuestion(){
+        let get = QuestionHelper.startQuestion()
+    }
+}

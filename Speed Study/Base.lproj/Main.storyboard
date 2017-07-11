@@ -70,10 +70,10 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
-        <!--View Controller-->
+        <!--Calculus View Controller-->
         <scene sceneID="dir-Sv-Gfe">
             <objects>
-                <viewController id="9GV-Wu-GNU" sceneMemberID="viewController">
+                <viewController id="9GV-Wu-GNU" customClass="CalculusViewController" customModule="Speed_Study" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Gby-ER-1rC"/>
                         <viewControllerLayoutGuide type="bottom" id="6w0-Nb-q8O"/>
@@ -82,9 +82,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gkd-LO-S7Y">
-                                <rect key="frame" x="166" y="86" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gkd-LO-S7Y">
+                                <rect key="frame" x="166" y="86" width="43" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -93,30 +92,60 @@
                                 <rect key="frame" x="67" y="318" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="button1Tapped:" destination="9GV-Wu-GNU" eventType="touchUpInside" id="Z0N-aJ-dHE"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGH-o9-DpZ">
                                 <rect key="frame" x="67" y="459" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="button2Tapped:" destination="9GV-Wu-GNU" eventType="touchUpInside" id="Nz0-m3-e4i"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jyh-JP-DQk">
                                 <rect key="frame" x="261" y="459" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="button3Tapped:" destination="9GV-Wu-GNU" eventType="touchUpInside" id="9jL-gw-pAm"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ach-BO-O6M">
                                 <rect key="frame" x="261" y="318" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="button4Tapped:" destination="9GV-Wu-GNU" eventType="touchUpInside" id="xpC-bd-kiM"/>
+                                </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Brv-fn-LPh">
-                                <rect key="frame" x="67" y="115" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDe-Ll-o4G">
+                                <rect key="frame" x="141" y="137" width="93" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Gkd-LO-S7Y" firstAttribute="leading" secondItem="tus-wt-hdS" secondAttribute="leadingMargin" constant="150" id="439-XL-4cj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Gkd-LO-S7Y" secondAttribute="trailing" constant="150" id="BgW-Rr-t5e"/>
+                            <constraint firstItem="Gkd-LO-S7Y" firstAttribute="top" secondItem="Gby-ER-1rC" secondAttribute="bottom" constant="66" id="M67-ew-13M"/>
+                            <constraint firstItem="wDe-Ll-o4G" firstAttribute="top" secondItem="Gkd-LO-S7Y" secondAttribute="bottom" constant="30" id="RcF-nA-uMe"/>
+                            <constraint firstItem="wDe-Ll-o4G" firstAttribute="leading" secondItem="tus-wt-hdS" secondAttribute="leadingMargin" constant="125" id="WrH-OV-IZG"/>
+                            <constraint firstItem="wDe-Ll-o4G" firstAttribute="centerX" secondItem="tus-wt-hdS" secondAttribute="centerX" id="YGH-tG-2MQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wDe-Ll-o4G" secondAttribute="trailing" constant="125" id="wO4-kC-7tc"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="button1" destination="hdV-wB-VlY" id="nMS-bt-C1p"/>
+                        <outlet property="button2" destination="KGH-o9-DpZ" id="wFc-Ly-5mU"/>
+                        <outlet property="button3" destination="Jyh-JP-DQk" id="T6i-oy-P1h"/>
+                        <outlet property="button3Tapped" destination="Jyh-JP-DQk" id="UZt-ar-BEZ"/>
+                        <outlet property="button4" destination="ach-BO-O6M" id="Vl6-ak-iNF"/>
+                        <outlet property="questionNumber" destination="Gkd-LO-S7Y" id="VvI-bh-PNs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Red-zF-8IO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
