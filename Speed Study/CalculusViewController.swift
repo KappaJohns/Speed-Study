@@ -13,6 +13,7 @@ class CalculusViewController: UIViewController{
     @IBOutlet weak var button2: UIButton!
     
     @IBAction func button1Tapped(_ sender: Any) {
+        
     }
     @IBAction func button2Tapped(_ sender: Any) {
     }

@@ -7,7 +7,14 @@
 //
 
 import Foundation
-
+// Make it in a singleton
 class AnswerService{
+    
+//    func getQA() -> String{
+//        
+//        
+//    }
+    
+    static let getAnswer = AnswerService()
     
 }

@@ -13,11 +13,15 @@ struct Question{
     
     var questionNum: Int
     var question: String
+    var isRight: Bool?
+    var button1: Bool = false
+    var button2: Bool = false
+    var button3: Bool = false
+    var button4: Bool = false
     
     init(number: Int, name: String)
     {
         self.questionNum = number
         self.question = name
     }
-   
 }
