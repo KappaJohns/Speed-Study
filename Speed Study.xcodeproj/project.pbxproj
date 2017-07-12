@@ -19,6 +19,7 @@
 		20DED8D11F141946008A941F /* AnswerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DED8D01F141946008A941F /* AnswerService.swift */; };
 		20DED8D41F15058E008A941F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DED8D31F15058E008A941F /* Question.swift */; };
 		20DED8D61F150EDA008A941F /* QuestionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DED8D51F150EDA008A941F /* QuestionHelper.swift */; };
+		20DED8D81F15667F008A941F /* QuestionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DED8D71F15667F008A941F /* QuestionGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		20DED8D01F141946008A941F /* AnswerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerService.swift; sourceTree = "<group>"; };
 		20DED8D31F15058E008A941F /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		20DED8D51F150EDA008A941F /* QuestionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionHelper.swift; sourceTree = "<group>"; };
+		20DED8D71F15667F008A941F /* QuestionGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				20DED8CA1F14105F008A941F /* Score.swift */,
 				20DED8D31F15058E008A941F /* Question.swift */,
 				20DED8D51F150EDA008A941F /* QuestionHelper.swift */,
+				20DED8D71F15667F008A941F /* QuestionGenerator.swift */,
 			);
 			path = "Speed Study";
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20DED89A1F140A76008A941F /* ViewController.swift in Sources */,
+				20DED8D81F15667F008A941F /* QuestionGenerator.swift in Sources */,
 				20DED8C61F140EE1008A941F /* CalculusViewController.swift in Sources */,
 				20DED8D41F15058E008A941F /* Question.swift in Sources */,
 				20DED8CB1F14105F008A941F /* Score.swift in Sources */,
