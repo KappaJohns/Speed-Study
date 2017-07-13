@@ -10,7 +10,7 @@ import Foundation
 
 struct Question{
     
-    var questionNum: Int?
-    var question: String?
-    var answer: String?
+    var questionNum: Int
+    var question: String
+    var answer: String
 }

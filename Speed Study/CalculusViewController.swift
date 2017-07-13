@@ -9,7 +9,8 @@ import UIKit
 import Foundation
 
 class CalculusViewController: UIViewController{
-    var q = Question
+    var n: Question!
+    var m: QNA!
     @IBOutlet var buttonSet: [UIButton]!
     
     @IBAction func buttonSetTapped(sender: UIButton)
@@ -24,8 +25,10 @@ class CalculusViewController: UIViewController{
         
     }
     func loadQuestion(){
-        questionNumber.text = q.question
-        buttonSet[2].setTitle(q.answer, for: .normal)
-        
+        questionNumber.text = n.question
+        buttonSet[2].setTitle(n.answer, for: .normal)
+        buttonSet[0].setTitle(m.mathAnswers[Int(arc4random_uniform(UInt32(n.questionNum)))], for: .normal)
+        buttonSet[1].setTitle(m.mathAnswers[Int(arc4random_uniform(UInt32(n.questionNum)))], for: .normal)
+        buttonSet[3].setTitle(m.mathAnswers[Int(arc4random_uniform(UInt32(n.questionNum)))], for: .normal)
     }
 }

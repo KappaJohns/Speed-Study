@@ -8,10 +8,41 @@
 
 import Foundation
 
-struct QuestionsAndAnswer{
-    var arrayQuestions =  [String]()
+class QNA {
     
-    var arrayAnswers = [Answer]()
+    static var mathQuestions: [String] = [String]()
+    static var mathAnswers: [String] = [String]()
     
-    static var q = QuestionsAndAnswer()
+    // create Math QnA
+    
+    class func createMathQuestions() {
+        mathQuestions.append("What is the derivative of sin(x) ?")
+        mathQuestions.append("What is the derivative of cos(x) ?")
+        mathQuestions.append("What is the derivative of tan(x) ?")
+        mathQuestions.append("What is the derivative of csc(x) ?")
+        mathQuestions.append("What is the derivative of sec(x) ?")
+        mathQuestions.append("What is the derivative of cot(x) ?")
+        mathQuestions.append("What is the derivative of x^2 ?")
+        mathQuestions.append("What is the derivative of 4x^3 + 7x^2 ?")
+    }
+    
+    class func getMathAnswers() {
+        mathAnswers.append("cos(x)")
+        mathAnswers.append("-sin(x)")
+        mathAnswers.append("sec^2(x)")
+        mathAnswers.append("-csc(x) * cot(x)")
+        mathAnswers.append("sec(x) * tan(x)")
+        mathAnswers.append("-csc^2(x)")
+        mathAnswers.append("2x")
+        mathAnswers.append("12x^2 + 14x")
+    }
+    
+    // create History QnA
+    
+    // create Comp Sci QnA
+    
+    // create Geography QnA
+    
+    
+    // static var q = QuestionsAndAnswer()
 }
