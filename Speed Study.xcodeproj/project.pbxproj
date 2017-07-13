@@ -16,7 +16,7 @@
 		20DED8A21F140A76008A941F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20DED8A01F140A76008A941F /* LaunchScreen.storyboard */; };
 		20DED8AD1F140A76008A941F /* Speed_StudyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DED8AC1F140A76008A941F /* Speed_StudyTests.swift */; };
 		20DED8B81F140A76008A941F /* Speed_StudyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DED8B71F140A76008A941F /* Speed_StudyUITests.swift */; };
-		20DED8C61F140EE1008A941F /* CalculusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DED8C51F140EE1008A941F /* CalculusViewController.swift */; };
+		20DED8C61F140EE1008A941F /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DED8C51F140EE1008A941F /* QuestionViewController.swift */; };
 		20DED8CB1F14105F008A941F /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DED8CA1F14105F008A941F /* Score.swift */; };
 		20DED8D41F15058E008A941F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DED8D31F15058E008A941F /* Question.swift */; };
 		20DED8D81F15667F008A941F /* QuestionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DED8D71F15667F008A941F /* QuestionGenerator.swift */; };
@@ -55,7 +55,7 @@
 		20DED8B31F140A76008A941F /* Speed StudyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Speed StudyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20DED8B71F140A76008A941F /* Speed_StudyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speed_StudyUITests.swift; sourceTree = "<group>"; };
 		20DED8B91F140A76008A941F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		20DED8C51F140EE1008A941F /* CalculusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculusViewController.swift; sourceTree = "<group>"; };
+		20DED8C51F140EE1008A941F /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		20DED8CA1F14105F008A941F /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		20DED8D31F15058E008A941F /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		20DED8D71F15667F008A941F /* QuestionGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionGenerator.swift; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				20DED8991F140A76008A941F /* ViewController.swift */,
-				20DED8C51F140EE1008A941F /* CalculusViewController.swift */,
+				20DED8C51F140EE1008A941F /* QuestionViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -311,7 +311,7 @@
 			files = (
 				20DED89A1F140A76008A941F /* ViewController.swift in Sources */,
 				20DED8D81F15667F008A941F /* QuestionGenerator.swift in Sources */,
-				20DED8C61F140EE1008A941F /* CalculusViewController.swift in Sources */,
+				20DED8C61F140EE1008A941F /* QuestionViewController.swift in Sources */,
 				20DED8D41F15058E008A941F /* Question.swift in Sources */,
 				2057B4331F17CB64000B98AC /* QuestionsAndAnswers.swift in Sources */,
 				20DED8CB1F14105F008A941F /* Score.swift in Sources */,

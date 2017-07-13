@@ -9,10 +9,13 @@
 import Foundation
 class QuestionGenerator{
 
-    class func generatorQuestion(num: Int) -> [Question]
+    class func generatorQuestion(num: Int) -> Question
     {
+        QNA.createMathQuestions()
+        QNA.getMathAnswers()
         let questionGot = QNA.mathQuestions[num]
         let answerGot = QNA.mathAnswers[num]
-        return [Question(questionNum: num, question: questionGot, answer: answerGot)]
+        //num += 1
+        return Question(questionNum: num, text: questionGot, answer: answerGot)
     }
 }

@@ -8,9 +8,15 @@
 import UIKit
 import Foundation
 
-struct Question{
+class Question{
     
     var questionNum: Int
-    var question: String
+    var text: String
     var answer: String
+    
+    init(questionNum: Int, text: String, answer: String) {
+        self.questionNum = questionNum
+        self.text = text
+        self.answer = answer 
+    }
 }

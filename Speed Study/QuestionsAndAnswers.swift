@@ -10,21 +10,12 @@ import Foundation
 
 class QNA {
     
-<<<<<<< HEAD
     static var mathQuestions: [String] = [String]()
     static var mathAnswers: [String] = [String]()
     
     // create Math QnA
     
     class func createMathQuestions() {
-=======
-    var mathQuestions: [String] = [String]()
-    var mathAnswers: [String] = [String]()
-    
-    // create Math QnA
-    
-    private func createMathQuestions() {
->>>>>>> d8c26b8119f3ab438ab7c4d6ea5534efc1e80940
         mathQuestions.append("What is the derivative of sin(x) ?")
         mathQuestions.append("What is the derivative of cos(x) ?")
         mathQuestions.append("What is the derivative of tan(x) ?")
@@ -35,11 +26,7 @@ class QNA {
         mathQuestions.append("What is the derivative of 4x^3 + 7x^2 ?")
     }
     
-<<<<<<< HEAD
     class func getMathAnswers() {
-=======
-    private func getMathAnswers() {
->>>>>>> d8c26b8119f3ab438ab7c4d6ea5534efc1e80940
         mathAnswers.append("cos(x)")
         mathAnswers.append("-sin(x)")
         mathAnswers.append("sec^2(x)")
