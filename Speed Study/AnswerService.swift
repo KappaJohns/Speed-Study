@@ -10,10 +10,9 @@ import Foundation
 // Make it in a singleton
 class AnswerService{
     
-//    func getQA() -> String{
-//        
-//        
-//    }
+    func getQA(for set: [[(x: String, y: Bool)]], xIndex: Int, stringKey: String) -> Bool{
+        let location = set.index
+    }
     
     static let getAnswer = AnswerService()
     

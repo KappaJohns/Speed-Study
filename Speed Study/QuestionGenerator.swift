@@ -8,24 +8,25 @@
 
 import Foundation
 class QuestionGenerator{
-    
-    static var questionSet: [Int: String] = [1: "What is the derivative of X^2?",
-                                             2: "What is the integration of 2x^3 + 4x^(1/2)?",
-                                             3: ""  ]
-    static var answerSet:[[(x: String, y: Bool)]] = [[("(1/3)*x^3", false), ("2x", true ), ("x + 2", false), ("x", false)]]
-    class func getQuestionNum() -> Int{
-        let randNum: Int  = Int(arc4random_uniform(UInt32(questionSet.count)))
-        return randNum
-    }
-    class func getQuestion(_ questionNum: Int) -> String{
-        let nameOfQuestion = questionSet[questionNum]
-        questionSet.removeValue(forKey: questionNum)
-        return nameOfQuestion!
-    }
-    func give()
+    let answer_1 = Answer( answerText: "(1/3)*X^3", isRight: false)
+    let answer_2 = Answer( answerText: "X^3", isRight: false)
+    let answer_3 = Answer( answerText: "2X", isRight: true)
+    let answer_4 = Answer( answerText: "X/2", isRight: false)
+    var question1: Question = Question(questionNum: 1,question: "What is the derivative of 2X?", answers: QuestionGenerator.getSetOfAnswers(<#T##answer_1: Answer##Answer#>, <#T##answer_2: Answer##Answer#>, <#T##answer_3: Answer##Answer#>, <#T##answer_4: Answer##Answer#>) )
+    class func getSetOfAnswers(_ answer_1: Answer, _ answer_2: Answer, _ answer_3: Answer , _ answer_4:  Answer) -> [Answer]
     {
-        let r = QuestionGenerator.getQuestionNum()
-        let q = Question(number: r, name: QuestionGenerator.getQuestion(r))
-        
+        let answer1 = [answer_1, answer_2, answer_3, answer_4]
+        return answer1
     }
+
+    class func giveAQuestion(num: Int, q: String, ans: [Answer]) -> [Question]{
+        let aQ: [Question] = [Question(questionNum: num, question: q, answers: ans)]
+        return aQ
+    }
+    var aSet: [[Question]]?
+//    class func getAQuestion() -> [Question]{
+//    let randInt = Int?(arc4random_uniform(UInt32()))
+//        
+//    }
+    
 }
