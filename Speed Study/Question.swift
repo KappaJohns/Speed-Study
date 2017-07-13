@@ -9,9 +9,8 @@ import UIKit
 import Foundation
 
 struct Question{
-    var questionNum: Int
-    var question: String
     
-    var answers: [Answer]
-    
+    var questionNum: Int?
+    var question: String?
+    var answer: String?
 }

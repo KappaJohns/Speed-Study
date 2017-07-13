@@ -126,7 +126,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="button1Tapped:" destination="9GV-Wu-GNU" eventType="touchUpInside" id="Z0N-aJ-dHE"/>
+                                    <action selector="buttonSetTappedWithSender:" destination="9GV-Wu-GNU" eventType="touchUpInside" id="m9J-QH-K68"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jyh-JP-DQk" userLabel="ansBox2">
@@ -136,7 +136,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="button3Tapped:" destination="9GV-Wu-GNU" eventType="touchUpInside" id="9jL-gw-pAm"/>
+                                    <action selector="buttonSetTappedWithSender:" destination="9GV-Wu-GNU" eventType="touchUpInside" id="eJo-HU-ONw"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGH-o9-DpZ" userLabel="ansBox3">
@@ -146,7 +146,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="button2Tapped:" destination="9GV-Wu-GNU" eventType="touchUpInside" id="Nz0-m3-e4i"/>
+                                    <action selector="buttonSetTappedWithSender:" destination="9GV-Wu-GNU" eventType="touchUpInside" id="JKU-M0-n92"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ach-BO-O6M" userLabel="ansBox4">
@@ -156,7 +156,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="button4Tapped:" destination="9GV-Wu-GNU" eventType="touchUpInside" id="xpC-bd-kiM"/>
+                                    <action selector="buttonSetTappedWithSender:" destination="9GV-Wu-GNU" eventType="touchUpInside" id="N3B-zA-ppW"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDe-Ll-o4G">
@@ -188,10 +188,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="button1" destination="hdV-wB-VlY" id="nMS-bt-C1p"/>
-                        <outlet property="button2" destination="KGH-o9-DpZ" id="wFc-Ly-5mU"/>
-                        <outlet property="button3" destination="Jyh-JP-DQk" id="T6i-oy-P1h"/>
-                        <outlet property="button4" destination="ach-BO-O6M" id="Vl6-ak-iNF"/>
+                        <outlet property="questionNumber" destination="wDe-Ll-o4G" id="96h-UB-vj8"/>
+                        <outletCollection property="buttonSet" destination="hdV-wB-VlY" collectionClass="NSMutableArray" id="pja-BO-7Wd"/>
+                        <outletCollection property="buttonSet" destination="Jyh-JP-DQk" collectionClass="NSMutableArray" id="rpm-l9-ZAt"/>
+                        <outletCollection property="buttonSet" destination="KGH-o9-DpZ" collectionClass="NSMutableArray" id="UKJ-Ex-qYL"/>
+                        <outletCollection property="buttonSet" destination="ach-BO-O6M" collectionClass="NSMutableArray" id="ked-rb-5W0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Red-zF-8IO" userLabel="First Responder" sceneMemberID="firstResponder"/>

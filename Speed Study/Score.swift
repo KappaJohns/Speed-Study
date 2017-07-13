@@ -8,6 +8,7 @@
 
 import Foundation
 
-class Score{
-    
+struct Score{
+    var score: Int
+    var timeLeft = CFTimeInterval()
 }
