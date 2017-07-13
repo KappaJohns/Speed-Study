@@ -8,11 +8,11 @@
 
 import Foundation
 class QuestionGenerator{
-    var QnA = QNA!
+
     class func generatorQuestion(num: Int) -> [Question]
     {
-        let questionGot = QnA.arrayQuestions[num]
-        let answerGot = QNA.arrayAnswers[num]
-        return [Question(questionNum: num, question: questionGot, answer: answerGot.name)]
+        let questionGot = QNA.mathQuestions[num]
+        let answerGot = QNA.mathAnswers[num]
+        return [Question(questionNum: num, question: questionGot, answer: answerGot)]
     }
 }
