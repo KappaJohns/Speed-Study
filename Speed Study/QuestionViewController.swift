@@ -17,13 +17,11 @@ class QuestionViewController: UIViewController{
     
     @IBAction func buttonSetTapped(sender: UIButton)
     {
-        for button in buttonSet {
-            let index = buttonSet.index(of: sender)!
-            if randInt == index
-            {
-                Score.score += 1
-                loadQuestion()
-            }
+        let index = buttonSet.index(of: sender)!
+        if randInt == index
+        {
+            //Score.score += 1
+            loadQuestion()
         }
     }
     
@@ -31,6 +29,12 @@ class QuestionViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // make buttons circular
+        for button in buttonSet {
+            button.layer.cornerRadius = 15
+        }
+        
         loadQuestion()
         
     }
