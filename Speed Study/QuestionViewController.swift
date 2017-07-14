@@ -9,6 +9,7 @@ import UIKit
 import Foundation
 
 class QuestionViewController: UIViewController{
+    @IBOutlet weak var errorMessage: UILabel!
     var answerList = [String]()
     var question: Question!
     var verify: String = " "
@@ -29,6 +30,9 @@ class QuestionViewController: UIViewController{
             QNA.mathQuestions.removeAll()
             QNA.mathAnswers.removeAll()
             loadQuestion()
+        }
+        else{
+            
         }
     }
     
