@@ -18,4 +18,7 @@ class QuestionGenerator{
         //num += 1
         return Question(questionNum: num, text: questionGot, answer: answerGot)
     }
+    class func generatorAnswer(num: Int) -> String{
+        return QNA.mathAnswers[num]
+    }
 }
