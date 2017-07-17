@@ -8,17 +8,12 @@
 
 import Foundation
 class QuestionGenerator{
-
-    class func generatorQuestion(num: Int) -> Question
+    
+    class func generatorQuestion() -> Question
     {
-        QNA.createMathQuestions()
-        QNA.getMathAnswers()
-        let questionGot = QNA.mathQuestions[num]
-        let answerGot = QNA.mathAnswers[num]
-        //num += 1
-        return Question(questionNum: num, text: questionGot, answer: answerGot)
-    }
-    class func generatorAnswer(num: Int) -> String{
-        return QNA.mathAnswers[num]
+        let randInt = Int(arc4random_uniform(UInt32(QNA.mathQuestions.count)))
+        let gotQuestion = QNA.mathQuestions[randInt]
+        QNA.mathQuestions.remove(at: randInt)
+        return gotQuestion
     }
 }

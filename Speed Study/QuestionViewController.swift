@@ -11,28 +11,34 @@ import Foundation
 class QuestionViewController: UIViewController{
     @IBOutlet weak var errorMessage: UILabel!
     var answerList = [String]()
+    var timeManage: Timer!
+
     var question: Question!
-    var verify: String = " "
-    var randInt: Int = 0
-    var randChoose: Int = 0
-    var randAnswer1 = 0
-    var randAnswer2 = 0
-    var randAnswer3 = 0
+    var score = 0
+    var previousIndex: Int?
+    var numTimes = 0
     
     @IBOutlet var buttonSet: [UIButton]!
     
     @IBAction func buttonSetTapped(sender: UIButton)
     {
+        errorMessage.text = " "
         let index = buttonSet.index(of: sender)!
-        if randInt == index
+        if question.answer[index].isRight
         {
-            //Score.score += 1
-            QNA.mathQuestions.removeAll()
-            QNA.mathAnswers.removeAll()
-            loadQuestion()
+            score += 1
+            print(score)
+            if QNA.mathQuestions.count == 0
+            {
+                performSegue(withIdentifier: "toScoreBoard", sender: self)
+            }
+            else{
+                loadQuestion()
+            }
         }
         else{
-            
+            errorMessage.text = "Wrong Answer: Timer Reduced by 5 seconds"
+            //timeManage.time -= 0.05
         }
     }
     
@@ -45,97 +51,19 @@ class QuestionViewController: UIViewController{
         for button in buttonSet {
             button.layer.cornerRadius = 15
         }
-        
+        QNA.createMathQuestion()
         loadQuestion()
         
     }
     func loadQuestion(){
-        randInt = Int(arc4random_uniform(UInt32(3)))
-        randChoose = Int(arc4random_uniform(UInt32(7)))
-        question = QuestionGenerator.generatorQuestion(num: randChoose)
-        questionNumber.text = question.text //question.text
         
-        randInt = Int(arc4random_uniform(UInt32(3)))
-        switch randInt{
-        case 0:
-            buttonSet[0].setTitle(question.answer, for: .normal)
-            QNA.mathQuestions.remove(at: randChoose)
-            QNA.mathAnswers.remove(at: randChoose)
-            
-            randAnswer1 = Int(arc4random_uniform(UInt32(QNA.mathAnswers.count-1)))
-            buttonSet[1].setTitle(QNA.mathAnswers[randAnswer1],for: .normal)
-            QNA.mathAnswers.remove(at: randAnswer1)
-            
-            randAnswer2 = Int(arc4random_uniform(UInt32(QNA.mathAnswers.count-1)))
-            buttonSet[2].setTitle(QNA.mathAnswers[randAnswer2],for: .normal)
-            QNA.mathAnswers.remove(at: randAnswer2)
-            
-            randAnswer3 = Int(arc4random_uniform(UInt32(QNA.mathAnswers.count-1)))
-            buttonSet[3].setTitle(QNA.mathAnswers[randAnswer3],for: .normal)
-            QNA.mathAnswers.remove(at: randAnswer3)
-            
-        case 1:
-            buttonSet[1].setTitle(question.answer, for: .normal)
-            QNA.mathQuestions.remove(at: randChoose)
-            QNA.mathAnswers.remove(at: randChoose)
-            
-            randAnswer1 = Int(arc4random_uniform(UInt32(QNA.mathAnswers.count-1)))
-            buttonSet[0].setTitle(QNA.mathAnswers[randAnswer1],for: .normal)
-            QNA.mathAnswers.remove(at: randAnswer1)
-            
-            randAnswer2 = Int(arc4random_uniform(UInt32(QNA.mathAnswers.count-1)))
-            buttonSet[2].setTitle(QNA.mathAnswers[randAnswer2],for: .normal)
-            QNA.mathAnswers.remove(at: randAnswer2)
-            
-            randAnswer3 = Int(arc4random_uniform(UInt32(QNA.mathAnswers.count-1)))
-            buttonSet[3].setTitle(QNA.mathAnswers[randAnswer3],for: .normal)
-            QNA.mathAnswers.remove(at: randAnswer3)
-        case 2:
-            buttonSet[2].setTitle(question.answer, for: .normal)
-            QNA.mathQuestions.remove(at: randChoose)
-            QNA.mathAnswers.remove(at: randChoose)
-            
-            randAnswer1 = Int(arc4random_uniform(UInt32(QNA.mathAnswers.count-1)))
-            buttonSet[0].setTitle(QNA.mathAnswers[randAnswer1],for: .normal)
-            QNA.mathAnswers.remove(at: randAnswer1)
-            
-            randAnswer2 = Int(arc4random_uniform(UInt32(QNA.mathAnswers.count-1)))
-            buttonSet[1].setTitle(QNA.mathAnswers[randAnswer2],for: .normal)
-            QNA.mathAnswers.remove(at: randAnswer2)
-            
-            randAnswer3 = Int(arc4random_uniform(UInt32(QNA.mathAnswers.count-1)))
-            buttonSet[3].setTitle(QNA.mathAnswers[randAnswer3],for: .normal)
-            QNA.mathAnswers.remove(at: randAnswer3)
-            
-        case 3:
-            buttonSet[3].setTitle(question.answer, for: .normal)
-            QNA.mathQuestions.remove(at: randChoose)
-            QNA.mathAnswers.remove(at: randChoose)
-            
-            
-            randAnswer1 = Int(arc4random_uniform(UInt32(QNA.mathAnswers.count-1)))
-            buttonSet[0].setTitle(QNA.mathAnswers[randAnswer1],for: .normal)
-            QNA.mathAnswers.remove(at: randAnswer1)
-            
-            randAnswer2 = Int(arc4random_uniform(UInt32(QNA.mathAnswers.count-1)))
-            buttonSet[1].setTitle(QNA.mathAnswers[randAnswer2],for: .normal)
-            QNA.mathAnswers.remove(at: randAnswer2)
-            
-            randAnswer3 = Int(arc4random_uniform(UInt32(QNA.mathAnswers.count-1)))
-            buttonSet[2].setTitle(QNA.mathAnswers[randAnswer3],for: .normal)
-            QNA.mathAnswers.remove(at: randAnswer3)
-        default:
-            fatalError("index out of bounds")
-        }
+        question = QuestionGenerator.generatorQuestion()
         
-//        randInt = Int(arc4random_uniform(UInt32(question.questionNum)))
-//        buttonSet[0].setTitle(QNA.mathAnswers[randInt], for: .normal)
-//        
-//        randInt = Int(arc4random_uniform(UInt32(question.questionNum)))
-//        buttonSet[1].setTitle(QNA.mathAnswers[randInt], for: .normal)
-//        
-//        buttonSet[2].setTitle(question.answer, for: .normal)
-//        
-//        buttonSet[3].setTitle(QNA.mathAnswers[Int(arc4random_uniform(UInt32(question.questionNum)))], for: .normal)
+        questionNumber.text = question.text
+        
+        buttonSet[0].setTitle(question.answer[0].name, for: .normal)
+        buttonSet[1].setTitle(question.answer[1].name, for: .normal)
+        buttonSet[2].setTitle(question.answer[2].name, for: .normal)
+        buttonSet[3].setTitle(question.answer[3].name, for: .normal)
     }
 }

@@ -12,9 +12,9 @@ class Question{
     
     var questionNum: Int
     var text: String
-    var answer: String
+    var answer: [Answer]
     
-    init(questionNum: Int, text: String, answer: String) {
+    init(questionNum: Int, text: String, answer: [Answer]) {
         self.questionNum = questionNum
         self.text = text
         self.answer = answer 

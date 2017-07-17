@@ -10,4 +10,5 @@ import Foundation
 
 struct Answer{
     var name: String
+    var isRight: Bool
 }
