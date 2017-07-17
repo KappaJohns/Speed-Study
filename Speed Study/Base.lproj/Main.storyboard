@@ -269,10 +269,10 @@
             </objects>
             <point key="canvasLocation" x="1052" y="138.98050974512745"/>
         </scene>
-        <!--View Controller-->
+        <!--Score View Controller-->
         <scene sceneID="Ey0-Vr-Wf5">
             <objects>
-                <viewController id="egK-Wf-ljx" sceneMemberID="viewController">
+                <viewController id="egK-Wf-ljx" customClass="ScoreViewController" customModule="Speed_Study" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4hj-YR-Ibc"/>
                         <viewControllerLayoutGuide type="bottom" id="cgh-iv-pfa"/>
@@ -330,7 +330,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="pVn-Eh-fK7">
                                         <rect key="frame" x="100" y="0.0" width="100" height="127"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRN-G1-Huc">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRN-G1-Huc">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="60"/>
                                                 <color key="backgroundColor" red="0.88025766611099243" green="0.57567596435546875" blue="0.72712647914886475" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -341,14 +341,14 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oej-sM-bzX">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oej-sM-bzX">
                                                 <rect key="frame" x="0.0" y="67" width="100" height="60"/>
                                                 <color key="backgroundColor" red="0.88025766611099243" green="0.57567596435546875" blue="0.72712647914886475" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="LIH-3Y-6eN"/>
                                                     <constraint firstAttribute="width" constant="100" id="rRf-bX-1kx"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -366,6 +366,10 @@
                             <constraint firstItem="aFc-iO-Nw8" firstAttribute="leading" secondItem="dyb-Ky-9AZ" secondAttribute="leading" id="qgf-ap-dyt"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="setScore" destination="tRN-G1-Huc" id="dZt-Fe-ziL"/>
+                        <outlet property="setTime" destination="Oej-sM-bzX" id="rTD-Bz-O2n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PDE-j8-6J7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,13 +10,10 @@ import Foundation
 
 class QuestionViewController: UIViewController{
     @IBOutlet weak var errorMessage: UILabel!
-    var answerList = [String]()
-    var timeManage: Timer!
-
     var question: Question!
-    var score = 0
-    var previousIndex: Int?
-    var numTimes = 0
+    static var score = 0
+    static var timeCollector: NSDate?
+    
     
     @IBOutlet var buttonSet: [UIButton]!
     
@@ -26,19 +23,26 @@ class QuestionViewController: UIViewController{
         let index = buttonSet.index(of: sender)!
         if question.answer[index].isRight
         {
-            score += 1
-            print(score)
+            QuestionViewController.score += 1
+            //print(score)
             if QNA.mathQuestions.count == 0
             {
                 performSegue(withIdentifier: "toScoreBoard", sender: self)
+//                setScore.text = "\(score)"
+//                if let timeInt = timeCollector?.timeIntervalSinceNow
+//                {
+//                    setTime.text = "\(timeInt)"
+//                }
             }
             else{
+                print(" ")
+                
                 loadQuestion()
             }
         }
         else{
+            QuestionViewController.score -= 1
             errorMessage.text = "Wrong Answer: Timer Reduced by 5 seconds"
-            //timeManage.time -= 0.05
         }
     }
     
@@ -46,18 +50,19 @@ class QuestionViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        QuestionViewController.timeCollector = NSDate()
         // make buttons circular
         for button in buttonSet {
             button.layer.cornerRadius = 15
         }
         QNA.createMathQuestion()
         loadQuestion()
-        
+        //timeCollector = NSDate()
     }
     func loadQuestion(){
         
         question = QuestionGenerator.generatorQuestion()
+        print(QNA.mathQuestions.count)
         
         questionNumber.text = question.text
         
