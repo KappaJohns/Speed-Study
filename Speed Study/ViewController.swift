@@ -9,9 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    static var mathTrue: Bool = false
+    static var compsciTrue: Bool = false
+    static var historyTrue: Bool = false
+    static var geographyTrue: Bool = false
+    
+    @IBAction func geographyButtonTapped(_ sender: Any) {
+        ViewController.geographyTrue = true
+    }
+    @IBAction func compsciButtonTapped(_ sender: Any) {
+        ViewController.compsciTrue = true
+    }
+    @IBAction func historyButtonTapped(_ sender: Any) {
+        ViewController.historyTrue = true
+    }
     @IBAction func calculusButtonTapped(_ sender: Any) {
-        
+        ViewController.mathTrue = true
     }
     @IBOutlet weak var calculusButton: UIButton!
     @IBOutlet weak var compsciButton: UIButton!

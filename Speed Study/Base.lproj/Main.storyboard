@@ -83,6 +83,10 @@
                                         <state key="normal" title="History">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="historyButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RdQ-xD-ZXp"/>
+                                            <segue destination="9GV-Wu-GNU" kind="show" id="A9R-MZ-NUG"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8p-0g-alJ">
                                         <rect key="frame" x="55.5" y="200" width="200" height="50"/>
@@ -95,6 +99,10 @@
                                         <state key="normal" title="Computer Science">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="compsciButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XWR-Xk-x9E"/>
+                                            <segue destination="9GV-Wu-GNU" kind="show" id="miR-Rs-fLB"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8aB-1L-k23" userLabel="geographyButton">
                                         <rect key="frame" x="55.5" y="300" width="200" height="50"/>
@@ -107,6 +115,10 @@
                                         <state key="normal" title="Geography">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="geographyButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RAU-eX-YBb"/>
+                                            <segue destination="9GV-Wu-GNU" kind="show" id="k6y-HE-weP"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -148,25 +160,48 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gwb-mf-3cw">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="261"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDe-Ll-o4G">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDe-Ll-o4G">
                                         <rect key="frame" x="8" y="52" width="359" height="168"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOu-e6-rWc">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOu-e6-rWc">
                                         <rect key="frame" x="166" y="228" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" red="1" green="0.27200092087229499" blue="0.23639450513501992" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="REW-I5-d58">
+                                        <rect key="frame" x="137" y="20" width="100" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="LC2-vp-VQw"/>
+                                            <constraint firstAttribute="width" constant="100" id="dGq-0o-VyB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wvk-Vd-NhP">
+                                        <rect key="frame" x="137" y="55" width="100" height="0.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="w2T-BM-brn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.26713529229164124" green="0.66520839929580688" blue="0.95198589563369751" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="MOu-e6-rWc" firstAttribute="leading" secondItem="Gwb-mf-3cw" secondAttribute="leading" constant="50" id="3ZX-2I-WNx"/>
+                                    <constraint firstItem="REW-I5-d58" firstAttribute="top" secondItem="Gwb-mf-3cw" secondAttribute="top" constant="20" id="EBG-W5-5w4"/>
                                     <constraint firstAttribute="bottom" secondItem="MOu-e6-rWc" secondAttribute="bottom" constant="15" id="ES7-iO-Dfm"/>
+                                    <constraint firstItem="Wvk-Vd-NhP" firstAttribute="centerX" secondItem="Gwb-mf-3cw" secondAttribute="centerX" id="eYi-QC-2S5"/>
                                     <constraint firstAttribute="trailing" secondItem="MOu-e6-rWc" secondAttribute="trailing" constant="50" id="rSw-JY-Lly"/>
+                                    <constraint firstItem="Wvk-Vd-NhP" firstAttribute="top" secondItem="REW-I5-d58" secondAttribute="bottom" constant="5" id="u6b-lM-JJm"/>
+                                    <constraint firstItem="REW-I5-d58" firstAttribute="centerX" secondItem="Gwb-mf-3cw" secondAttribute="centerX" id="urJ-Fk-ccr"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Icp-Fb-Mnr">
@@ -258,6 +293,8 @@
                     <connections>
                         <outlet property="errorMessage" destination="MOu-e6-rWc" id="HYa-X7-WUn"/>
                         <outlet property="questionNumber" destination="wDe-Ll-o4G" id="96h-UB-vj8"/>
+                        <outlet property="scoreLabel" destination="REW-I5-d58" id="V64-5F-n7z"/>
+                        <outlet property="timeLabel" destination="Wvk-Vd-NhP" id="RXk-hB-aTg"/>
                         <outletCollection property="buttonSet" destination="KGH-o9-DpZ" collectionClass="NSMutableArray" id="UKJ-Ex-qYL"/>
                         <outletCollection property="buttonSet" destination="ach-BO-O6M" collectionClass="NSMutableArray" id="ked-rb-5W0"/>
                         <outletCollection property="buttonSet" destination="Jyh-JP-DQk" collectionClass="NSMutableArray" id="rpm-l9-ZAt"/>
@@ -356,6 +393,15 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktA-Kx-KVT">
+                                <rect key="frame" x="111" y="467" width="152" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Home"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="dHQ-30-uuu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.53317797183990479" green="0.74152243137359619" blue="0.94947010278701782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -367,6 +413,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="homeScreenButton" destination="ktA-Kx-KVT" id="CO3-Z6-7Za"/>
                         <outlet property="setScore" destination="tRN-G1-Huc" id="dZt-Fe-ziL"/>
                         <outlet property="setTime" destination="Oej-sM-bzX" id="rTD-Bz-O2n"/>
                     </connections>
@@ -376,4 +423,7 @@
             <point key="canvasLocation" x="1970.4000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="miR-Rs-fLB"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -9,11 +9,13 @@ import UIKit
 import Foundation
 
 class QuestionViewController: UIViewController{
+    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var errorMessage: UILabel!
     var question: Question!
     static var score = 0
     static var timeCollector: NSDate?
     
+    @IBOutlet weak var scoreLabel: UILabel!
     
     @IBOutlet var buttonSet: [UIButton]!
     
@@ -25,18 +27,11 @@ class QuestionViewController: UIViewController{
         {
             QuestionViewController.score += 1
             //print(score)
-            if QNA.mathQuestions.count == 0
+            if QNA.mathQuestions.count == 0 || QNA.historyQuestions.count == 0 || QNA.geographyQuestions.count == 0 || QNA.csQuestions.count == 0
             {
                 performSegue(withIdentifier: "toScoreBoard", sender: self)
-//                setScore.text = "\(score)"
-//                if let timeInt = timeCollector?.timeIntervalSinceNow
-//                {
-//                    setTime.text = "\(timeInt)"
-//                }
             }
             else{
-                print(" ")
-                
                 loadQuestion()
             }
         }
@@ -52,18 +47,35 @@ class QuestionViewController: UIViewController{
         super.viewDidLoad()
         QuestionViewController.timeCollector = NSDate()
         // make buttons circular
+        
         for button in buttonSet {
             button.layer.cornerRadius = 15
-        }
+            
+            button.titleLabel!.lineBreakMode = .byWordWrapping
+            button.titleLabel!.textAlignment = .center
+            }
+        QNA.createGeographyQuestion()
+        QNA.createCSQuestion()
+        QNA.createHistoryQuestion()
         QNA.createMathQuestion()
         loadQuestion()
         //timeCollector = NSDate()
     }
     func loadQuestion(){
-        
-        question = QuestionGenerator.generatorQuestion()
-        print(QNA.mathQuestions.count)
-        
+        if ViewController.mathTrue{
+            question = QuestionGenerator.generatorMathQuestion()
+        }
+        if ViewController.historyTrue{
+            question = QuestionGenerator.generatorHistoryQuestion()
+        }
+        if ViewController.geographyTrue{
+            question = QuestionGenerator.generatorGeoQuestion()
+        }
+        if ViewController.compsciTrue{
+            question = QuestionGenerator.generatorCSQuestion()
+        }
+        //print(QNA.mathQuestions.count)
+        scoreLabel.text = "Score: \(QuestionViewController.score)"
         questionNumber.text = question.text
         
         buttonSet[0].setTitle(question.answer[0].name, for: .normal)
